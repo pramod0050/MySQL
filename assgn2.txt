@@ -1,0 +1,14 @@
+      Assignment-2
+Introducing Relational Databases.
+
+1) Which field of the Customers table is primary key?
+Ans-SNUM field is primary key in customers table.
+
+2) What is the 4th column of the customers table?
+Ans- Rating is the 4th column of the customers table.
+
+3) what is another word for row? For columns?
+Ans- for row is tuple,entity and oppurtunity And for columns are attribute and method.
+
+4) why isn't it possible to see the first five rows of a table?
+Ans-
