@@ -1,65 +1,117 @@
         EXERCISE-1
 
 
- 1.
-    create table SEMP
-    (
-     EMPNO CHAR(4),
-     EMPNAME CHAR(20),
-     BASIC FLOAT(9,2),
-     DEPTNO CHAR(2),
-     DEPTHEAD CHAR(4)
-     );
-2.
-    CREATE TABLE SDEPT
-    (
-     DEPTNO CHAR(2),
-     DEPTNAME CHAR(15)
-    );
-3.
-INSERT INTO SDEPT
-VALUES('10','Development');
-INSERT INTO SDEPT
-VALUES('20','Training');
+CREATE DATABASE Exercise_1a;
+SHOW databases;
+use Exercise_1a;
 
-4.
-INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO)
-VALUES('0001','SUNIL',6000,'10');
-INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO)
-VALUES('0002','HIREN',8000,'20');
-INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
-VALUES('0003','ALI',4000,'10','0001');
-INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTHEAD)
-VALUES('0004','GEORGE',6000,'10');
-
-CREATE TABLE S
+CREATE TABLE SEMP
 (
-S# CHAR(2),
-Sname VARCHAR(20),
-Status INT(2),
-City VARCHAR(20)
+EMPNO CHAR(4),
+EMPNAME CHAR(20),
+BASIC FLOAT(9,2),
+DEPTNO CHAR(2),
+DEPTHEAD CHAR(4)
 );
-
-CREATE TABLE PARTS
+CREATE TABLE SDEPT
 (
-P# CHAR(2),
-Pname VARCHAR(20),
-Color VARCHAR(20),
-Weight INT(4),
-City VARCHAR(20)
-);
+DEPTNO CHAR(2),
+DEPTNAME CHAR(15)
+); 
+show tables;
 
-CREATE TABLE PROJECTS
-(
-J# CHAR(2),
-Jname VARCHAR(20),
-City VARCHAR(20)
-);
+INSERT INTO SDEPT VALUES('10','Development');
+INSERT INTO SDEPT VALUES('20','Training');
+SELECT * FROM SDEPT;
 
-CREATE TABLE SUPPLIER-PARTS-PROJECT
+INSERT INTO SEMP VALUES('1001','SUNIL',6000,'10',null);
+INSERT INTO SEMP VALUES('1002','HIREN',8000,'20',null);
+INSERT INTO SEMP VALUES('1003','ALI',4000,'10','0001');
+INSERT INTO SEMP VALUES('1004','GEORGE',6000,null,'0002');
+
+SELECT * FROM SEMP;
+
+ create table S
+ (
+ `S#` char(4),
+ Sname varchar(20),
+ Status int(4),
+ City varchar(20)
+ );
+  desc S;
+    
+  insert into S values('S1','Siddhesh',10,'London');
+  insert into S values('S2','Sanjit',20,'Paris');
+  insert into S values('S3','Sandesh',30,'Athens');
+  insert into S values('S4','Ashish',40,'London');
+  insert into S values('S5','Samrat',50,'Paris');
+  insert into S values('S6','Rajesh',60,'London');
+
+  select * from S;
+    
+    
+create table P
 (
-S# CHAR(2),
-P# CHAR(2),
-J# CHAR(2),
-Qty VARCHAR(20)
+`P#` char(4),
+Pname varchar(20),
+Color varchar(20),
+Weight int(4),
+City varchar(20)
 );
+desc P;
+    
+insert into P values('P1','Connectors','white',12,'London');
+insert into P values('P2','ICs','black',14,'Paris');
+insert into P values('P3','HDD','grey',13,'London');
+insert into P values('P4','Plugs','black',15,'Paris');
+insert into P values('P5','Routers','grey',13,'London');
+select * from P;
+    
+    
+create table J
+(
+`J#` char(4),
+Jname varchar(20),
+City varchar(20)
+);
+desc J;
+    
+insert into J values('J1','EHome','London');
+insert into J values('J2','EMail','Athens');
+insert into J values('J3','Ecom','paris');
+insert into J values('J3','WEP','Athens');
+insert into J values('J3','DBT','paris');
+select * from J;
+      
+create table SPJ
+(
+`S#`char(4),
+`P#` char(4),
+`J#` char(4),
+Qty int(4)
+);
+desc SPJ;
+      
+select * from S;
+
+select `S#`,Sname from S;
+     
+select Pname,Color from P where City='London';
+     
+select * from S where City='London';
+      
+select * from S where City='Paris' or City= 'Athens';
+
+select * from J where City='Athens';
+     
+select * from P where Weight between 12 and 14;
+
+select Sname from S where Status >=20;
+
+select Sname from S where City <>'London';
+
+select City from S;
+
+select * from P where Weight*1000 ;
+
+select * from P where Weight*0.001;
