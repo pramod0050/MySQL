@@ -1,0 +1,17 @@
+      Assignment-2
+Introducing Relational Databases.
+
+1) Which field of the Customers table is primary key?
+Ans-SNUM field is primary key in customers table.
+
+2) What is the 4th column of the customers table?
+Ans- Rating is the 4th column of the customers table.
+
+3) what is another word for row? For columns?
+Ans- for row is tuple,entity and oppurtunity And for columns are attribute and method.
+
+4) why isn't it possible to see the first five rows of a table?
+Ans- When you update a row, if the row length is increasing, then entire may be move to some other address.
+-later when you SELECT from the table,you will find the row at some other position in the output.
+-it's only in the case of VARCHAR that the row length may increase or decrease.
+-Hence it is not possible to view the first or last 'N' rows of a table
