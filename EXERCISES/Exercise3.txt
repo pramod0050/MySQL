@@ -1,0 +1,28 @@
+1.Display all the Supplier names with the initial letter capital.  
+-->select concat(upper(substr(ename,1,1)),lower(substr(ename,2))) from emp;
+
+2)Display all the Supplier names in upper case.
+-->select upper(ename) from emp;
+
+3)Display all the Supplier names in lower case. 
+-->select lower(ename) from emp;
+
+4)Display all the Supplier names padded to 25 characters, with spaces on the left.  
+-->select lpad(ename,25,' ')as rightjustified from emp;
+
+5)Display all the Supplier names (with ‘la’ replaced by ‘ro’).  
+-->select replace(ename,'la','ro') from emp;
+
+6)Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replacedwith ‘o’.
+-->select replace(replace(ename,'l','r'),'a','o') from emp;
+
+7)Display the Supplier names and the lengths of the names
+-->select ename, length(ename)as len from emp;
+
+8)Use the soundex function to search for a supplier by the name of ‘BLOKE’.  
+-->select * from emp where soundex(ename)=soundex('bloke');
+
+9)
+
+10)Display the current day (e.g. Thursday).  
+-->select dayname(curdate);
